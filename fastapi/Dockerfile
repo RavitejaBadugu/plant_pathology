@@ -1,4 +1,4 @@
-FROM tiangolo/uvicorn-gunicorn:python3.7
+FROM tiangolo/uvicorn-gunicorn:python3.8
 
 RUN mkdir /fastapi
 
@@ -12,4 +12,4 @@ COPY . /fastapi
 
 EXPOSE 8000
 
-CMD ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]

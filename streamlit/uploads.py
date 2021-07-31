@@ -20,7 +20,7 @@ def app():
     image_file=st.file_uploader('upload image',type=['.jpg','.png'],accept_multiple_files=False)
     if image_file is not None:
         with st.spinner(text='In progress'):
-            response=process(image_file,'http://localhost:8000/predict')
+            response=process(image_file,'http://fastapi:8000/predict')
             final=response.json()['data']
             if type(final)=='int':
                 st.success(f"uploaded image belongs to {final}")

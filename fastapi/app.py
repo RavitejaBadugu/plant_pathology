@@ -1,5 +1,4 @@
 from fastapi import FastAPI,File
-import uvicorn
 from predict import get_prediction
 import numpy as np
 import io

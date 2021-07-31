@@ -1,7 +1,6 @@
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.models import load_model
-import pickle
 import albumentations as a
 
 model1=load_model('archive/plant_models/densenet_tuning_0.h5')
