@@ -1,5 +1,6 @@
 import numpy as np
 import tensorflow as tf
+from tensorflow.keras.preprocessing.image import load_img,img_to_array
 from tensorflow.keras.models import load_model
 import albumentations as a
 
@@ -18,8 +19,10 @@ def get_transformed(image):
 
 
 
-def get_prediction(image_array):
-    img=tf.image.resize(image_array,size=(380,380)).numpy()
+def get_prediction(file_path):
+    img=load_img(file_path,target_size=(380,380))
+    img=img_to_array(img)
+    #img=tf.image.resize(image_array,size=(380,380)).numpy()
     img=img/255.0
     if img.shape[-1]!=3:
         return 'image is getting 4 in final_dimension'
