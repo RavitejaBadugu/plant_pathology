@@ -1,0 +1,26 @@
+version: '3.3'
+services: 
+    fastapi:
+        build: ./fastapi/
+        container_name: fastpi_application
+        depends_on: 
+            - tf_serving
+        ports: 
+            - 8000:8000
+        networks:
+            - deploy_network
+            
+    tf_serving:
+        image: tensorflow/serving:latest
+        container_name: all_models
+        ports: 
+            - 8501:8501
+        networks:
+            - deploy_network
+        volumes: 
+            - ./tf_serving/serving_models/:/models
+        command: --model_config_file=/models/models.config
+
+networks:
+    deploy_network:
+        driver: bridge
