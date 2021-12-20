@@ -7,6 +7,7 @@ The dataset link is https://www.kaggle.com/c/plant-pathology-2020-fgvc7
 
 My private score is 0.95078.
 metric used is mean column-wise ROC AUC.
+![Alt text](https://github.com/RavitejaBadugu/plant_pathology/blob/deploy/images/Screenshot%202021-12-20%20204206.png)
 
 
 
